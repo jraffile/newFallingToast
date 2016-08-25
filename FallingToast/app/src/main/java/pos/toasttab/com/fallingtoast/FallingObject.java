@@ -1,11 +1,20 @@
 package pos.toasttab.com.fallingtoast;
 
+import org.w3c.dom.css.Rect;
+
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.util.Random;
 
-/**
- * Created by jraffile on 8/25/16.
- */
-public class FallingObject {
+public class FallingObject extends Rectangle {
+
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double screenWidth = screenSize.getWidth();
+    double screenHeight = screenSize.getHeight();
+
+    int windowWidth = (int) screenWidth;
+    int windowHeight = (int) screenHeight;
 
 //    public int objectXLocation;
     // figure out our object size so the object is not cut off on the screen
@@ -19,7 +28,7 @@ public class FallingObject {
     // creates a random value inside the window and stores it in fallingObjectXLocation
     public int generateRandomXLocation() {
         // change Game.WINDOW_WIDTH to whatever Game is in our code
-        return fallingObjectXLocation = rand.nextInt(Game.WINDOW_WIDTH - objectSize);
+        return fallingObjectXLocation = rand.nextInt(windowWidth - objectSize);
     }
 
     // creates a random non-zero vlaue and stores it in fallSpeed
@@ -27,10 +36,25 @@ public class FallingObject {
         return fallSpeed = rand.ints(1, 1, 10).findFirst().getAsInt();
     }
 
-    // collide?
-    public boolean hasCollided(Boolean hasCollided) {
-        // if fork hits toaster lives -1
-        // if bread hits toaster score +1
-        return hasCollided(hasCollided);
+//    // collide?
+//    public boolean hasCollided() {
+//        // if fork hits toaster lives -1
+//        // if bread hits toaster score +1
+//        return hasCollided();
+//    }
+
+    public void checkCollisions() {
+        Rectangle r1 = fork.getBoundsOfObject;
+        Rectangle r2 = toast.getBoundsOfObject;
+    }
+
+    // getBoundsOfObject
+    public Rectangle getBoundsOfObject() {
+        return new Rectangle(x, y, objectx, objecty);
+    }
+
+    // moves the object down if the object is inside the window
+    if(objectYLocation <= windowHeight) {
+        objectYLocation += fallSpeed;
     }
 }
