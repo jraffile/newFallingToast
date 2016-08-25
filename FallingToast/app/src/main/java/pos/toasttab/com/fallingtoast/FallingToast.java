@@ -51,7 +51,7 @@ public class FallingToast extends Activity {
 
         setContentView(R.layout.activity_falling_toast);
 
-        final View contentView = findViewById(R.id.fullscreen_content);
+        final View contentView = findViewById(R.id.toaster_bar);
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.

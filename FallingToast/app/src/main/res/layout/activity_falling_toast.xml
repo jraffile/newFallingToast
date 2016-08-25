@@ -1,25 +1,51 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:background="#0099cc"
-    tools:context=".FallingtToast">
+    android:layout_height="match_parent" android:background="@drawable/starfield"
+    tools:context=".FallingtToast"
+    android:gravity="center_horizontal">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <!--<TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"-->
-        <!--android:textStyle="bold" android:textSize="50sp" android:gravity="center" android:layout_height="match_parent"-->
-        <!--android:background="@drawable/starfield"/>-->
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fullscreen_content"
-        android:background="@drawable/starfield"/>
+        android:id="@+id/toaster_bar"
+        android:src="@drawable/toast"
+        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="-175dp"
+        android:paddingRight="-175dp"
+        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:id="@+id/left_arrow"
+        android:src="@drawable/orange_left"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:clickable="true" />
+    <ImageView
+        android:id="@+id/right_arrow"
+        android:src="@drawable/orange_right"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:clickable="true" />
+    <TextView
+        android:id="@+id/health"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:text="@string/health"
+        android:textSize="32dp"/>
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/score"
+        android:textSize="32dp"/>
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
-    <!--<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"-->
-        <!--android:fitsSystemWindows="true">-->
-
-    <!--</FrameLayout>-->
-
-</FrameLayout>
+</RelativeLayout>
