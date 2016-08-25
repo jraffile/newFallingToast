@@ -16,6 +16,4 @@ public class HealthBar {
         }else
             return false
     }
-                    //method isalive reutrns a boolean if current hp is > 0 return true if not return false
-
 }
