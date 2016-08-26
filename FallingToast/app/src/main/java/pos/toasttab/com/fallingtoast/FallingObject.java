@@ -1,7 +1,5 @@
 package pos.toasttab.com.fallingtoast;
 
-import org.w3c.dom.css.Rect;
-
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
@@ -49,12 +47,13 @@ public class FallingObject extends Rectangle {
     }
 
     // getBoundsOfObject
-    public Rectangle getBoundsOfObject() {
+    @Override
+    public Rectangle getBounds() {
         return new Rectangle(x, y, objectx, objecty);
     }
 
     // moves the object down if the object is inside the window
-    if(objectYLocation <= windowHeight) {
-        objectYLocation += fallSpeed;
-    }
+//    if(objectYLocation <= windowHeight) {
+//        objectYLocation += fallSpeed;
+//    }
 }
